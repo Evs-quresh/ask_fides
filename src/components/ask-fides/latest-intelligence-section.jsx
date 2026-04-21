@@ -42,10 +42,10 @@ function ArticleCard({ article }) {
         <span className="text-[#5f75a0]">•</span>
         <span className="text-[#7e92b8]">{article.date}</span>
       </div>
-      <h3 className="mt-2 min-h-[72px] text-[28px] font-semibold leading-[1.24] text-[#ebf2ff] transition-colors duration-200 group-hover:text-[#f5f9ff] sm:min-h-[86px] sm:text-[36px] xl:min-h-[96px]">
-        <span className="align-middle text-[28px] sm:text-[36px]">{article.title}</span>
+      <h3 className="mt-2 text-2xl font-semibold leading-[1.24] text-[#ebf2ff] transition-colors duration-200 group-hover:text-[#f5f9ff] sm:text-3xl">
+        {article.title}
       </h3>
-      <p className="mt-3 min-h-[72px] text-[16px] leading-[1.5] text-[#96abcf]">
+      <p className="mt-3 text-[16px] leading-[1.5] text-[#96abcf]">
         {article.description}
       </p>
     </article>

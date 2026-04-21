@@ -29,7 +29,7 @@ function TimelineRow({ item, highlighted = false }) {
 
 function TimelinePanel() {
   return (
-    <div className="w-full max-w-[560px] rounded-[4px] border border-[rgba(39,73,126,0.7)] bg-[linear-gradient(180deg,#132e58_0%,#10274b_100%)] p-4">
+    <div className="w-full max-w-[560px] rounded-[4px] border border-[rgba(39,73,126,0.7)] bg-[linear-gradient(180deg,#132e58_0%,#10274b_100%)] p-3 sm:p-4">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2 text-[#aac5f5]">
           <Sparkles size={12} />
@@ -70,7 +70,7 @@ function ArchitecturePanel() {
               {index === 0 ? <Bolt size={12} /> : <CircleCheckBig size={12} />}
             </div>
             <div className="min-w-0">
-              <h4 className="text-[22px] font-medium leading-[1.2] text-[#eaf1ff] sm:text-[27px]">{point.title}</h4>
+              <h4 className="text-xl font-medium leading-[1.2] text-[#eaf1ff] sm:text-[27px]">{point.title}</h4>
               <p className="mt-1.5 text-[15px] leading-[1.55] text-[#aebddb]">{point.description}</p>
             </div>
           </div>
@@ -83,7 +83,7 @@ function ArchitecturePanel() {
 export function ArchitectureSection() {
   return (
     <section className="border-b border-[rgba(27,56,104,0.45)] bg-[#071a34] px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-[1120px] items-start justify-center gap-8 lg:grid-cols-[560px_500px] lg:gap-10">
+      <div className="mx-auto grid max-w-[1120px] items-start justify-center gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-10">
         <div className="flex justify-center">
           <TimelinePanel />
         </div>

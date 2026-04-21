@@ -36,8 +36,8 @@ export function HowItWorksSection() {
             {workflowSteps.map((step) => (
               <article key={step.title} className="flex flex-col items-center text-center">
                 <StepIcon icon={step.icon} />
-                <h3 className="mt-5 text-[30px] font-semibold tracking-[-0.2px] text-[#f2f6ff] sm:text-[40px]">
-                  <span className="align-middle text-[24px] sm:text-[31px]">{step.title}</span>
+                <h3 className="mt-5 text-2xl font-semibold tracking-[-0.2px] text-[#f2f6ff] sm:text-3xl">
+                  {step.title}
                 </h3>
                 <p className="mt-3 max-w-[340px] text-[16px] font-medium leading-[1.45] text-[#9facca]">
                   {step.description}

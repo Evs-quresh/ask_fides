@@ -14,7 +14,7 @@ const buttonVariants = cva(
           'border border-[#233554] bg-[#112240] text-white hover:bg-[#162a4c]',
       },
       size: {
-        hero: 'h-[62px] px-8 text-[18px] leading-7',
+        hero: 'h-12 px-5 text-base leading-6 sm:h-14 sm:px-7 sm:text-lg sm:leading-7',
       },
     },
     defaultVariants: {

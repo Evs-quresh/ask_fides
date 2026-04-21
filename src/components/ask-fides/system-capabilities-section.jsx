@@ -23,13 +23,6 @@ const footerIconMap = {
   strategy: BrainCircuit,
 }
 
-const descriptionHeightMap = {
-  search: 'min-h-[121px]',
-  timeline: 'min-h-[121px]',
-  facts: 'min-h-[152px]',
-  strategy: 'min-h-[121px]',
-}
-
 const iconSizeMap = {
   search: 22.5,
   timeline: 22,
@@ -41,22 +34,22 @@ function CapabilityCard({ item }) {
   const Icon = iconMap[item.icon] ?? Search
   const FooterIcon = footerIconMap[item.icon] ?? BrainCircuit
   const iconSize = iconSizeMap[item.icon] ?? 22
-  const descriptionHeight = descriptionHeightMap[item.icon] ?? 'xl:min-h-[121px]'
 
   return (
-    <article className="flex h-full w-full flex-col rounded-[6px] border border-[rgba(41,74,128,0.7)] bg-[#10284d] px-5 pt-6 sm:px-7 sm:pt-7 lg:px-[33px] lg:pt-[33px] xl:h-[414.25px]">
-      <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-[6px] border border-[rgba(32,74,136,0.7)] bg-[#08254d] text-[#2f82ff]">
+    <article className="group relative flex h-full w-full flex-col overflow-hidden rounded-xl border border-[rgba(58,98,167,0.62)] bg-[linear-gradient(180deg,#14315f_0%,#10284d_58%,#0f2447_100%)] p-6 shadow-[0_10px_30px_rgba(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(91,145,236,0.95)] hover:shadow-[0_18px_44px_rgba(0,0,0,0.32)] sm:p-7 lg:p-8">
+      <div className="pointer-events-none absolute right-0 top-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-[rgba(59,130,246,0.14)] blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg border border-[rgba(71,123,206,0.65)] bg-[linear-gradient(180deg,#0c2e5e_0%,#0a264c_100%)] text-[#5aa2ff] shadow-[inset_0_1px_0_rgba(255,255,255,0.07)]">
         <Icon size={iconSize} strokeWidth={2} />
       </div>
-      <h3 className="text-[28px] font-semibold leading-8 tracking-[-0.1px] text-[#eef3ff] sm:text-[32px]">
-        <span className="align-middle text-[18px]">{item.title}</span>
+      <h3 className="text-[22px] font-semibold leading-[1.2] tracking-[-0.2px] text-[#eef3ff] sm:text-[26px]">
+        {item.title}
       </h3>
-      <p className={`mt-3 text-[15px] font-medium leading-[1.45] text-[#aebbd4] sm:text-[16px] sm:leading-[1.35] ${descriptionHeight}`}>
+      <p className="mt-3 text-[15px] leading-[1.6] text-[#c0cde3] sm:text-[16px]">
         {item.description}
       </p>
-      <div className="mt-6 border-t border-[rgba(45,81,141,0.45)] pt-[25px] xl:mt-auto">
-        <div className="flex items-center gap-[8px] text-[12px] text-[#7fb3ff]">
-          <FooterIcon size={12} />
+      <div className="mt-6 pt-5 xl:mt-auto">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(64,109,183,0.52)] bg-[rgba(14,40,79,0.72)] px-3 py-1.5 text-[12px] text-[#8ebcff]">
+          <FooterIcon size={12} className="opacity-90" />
           <span>{item.footer}</span>
         </div>
       </div>
@@ -87,7 +80,7 @@ export function SystemCapabilitiesSection() {
           </a>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
           {capabilityCards.map((item) => (
             <CapabilityCard key={item.title} item={item} />
           ))}

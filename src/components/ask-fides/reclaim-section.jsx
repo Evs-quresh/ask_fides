@@ -21,10 +21,10 @@ function ReclaimCard({ card }) {
         <span className="text-[10px] tracking-[0.2px] text-[#5f75a0] transition-colors duration-200 group-hover:text-[#7f9dd1]">{card.type}</span>
       </div>
 
-      <h3 className="min-h-[62px] text-[22px] font-semibold leading-[1.15] text-[#ecf3ff] xl:text-[24px]">
+      <h3 className="text-[22px] font-semibold leading-[1.15] text-[#ecf3ff] xl:text-[24px]">
         {card.title}
       </h3>
-      <p className="mt-3 min-h-[64px] max-w-[242px] text-[15px] leading-[1.45] text-[#aebddb] xl:min-h-[75px]">
+      <p className="mt-3 max-w-[242px] text-[15px] leading-[1.45] text-[#aebddb]">
         {card.description}
       </p>
 

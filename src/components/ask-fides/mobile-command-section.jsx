@@ -28,9 +28,7 @@ function MobileMockup() {
         <div className="mb-3 flex items-center justify-between border-b border-[rgba(33,67,118,0.65)] pb-2">
           <div className="flex items-center gap-2">
             <span className="inline-flex h-6 w-6 items-center justify-center rounded bg-[#3f89ff] text-[11px] font-semibold text-white">AF</span>
-            <span className="text-[30px] font-semibold text-[#ecf3ff]">
-              <span className="text-[28px]">Ask Fides Mobile</span>
-            </span>
+            <span className="text-base font-semibold text-[#ecf3ff] sm:text-lg">Ask Fides Mobile</span>
           </div>
           <Wifi size={14} className="text-[#7b92bc]" />
         </div>
@@ -55,7 +53,7 @@ export function MobileCommandSection() {
   return (
     <section className="border-b border-[rgba(27,56,104,0.45)] bg-[#071a34] px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto rounded-[6px] border border-[rgba(39,73,126,0.7)] bg-[#10284d] px-4 py-8 sm:px-6 sm:py-10 lg:max-w-[1280px] lg:px-12">
-        <div className="grid items-center gap-10 lg:grid-cols-[380px_minmax(0,1fr)] lg:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(300px,380px)_minmax(0,1fr)] lg:gap-16">
           <div className="flex justify-center">
             <MobileMockup />
           </div>

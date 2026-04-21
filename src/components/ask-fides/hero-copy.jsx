@@ -12,7 +12,7 @@ function TrustBadge({ iconSrc, label }) {
 
 export function HeroCopy() {
   return (
-    <div className="flex w-full max-w-[560px] flex-col items-start gap-6 sm:gap-8">
+    <div className="flex w-full max-w-[560px] flex-col items-start gap-6 text-left sm:gap-8">
       <div className="flex items-center gap-2 rounded-full border border-[rgba(59,130,246,0.3)] bg-[#112240] px-[13px] py-[7px]">
         <span className="h-2 w-2 rounded-full bg-[#3b82f6]" />
         <span className="text-sm font-semibold uppercase tracking-[0.35px] text-[#3b82f6]">
@@ -21,13 +21,13 @@ export function HeroCopy() {
       </div>
 
       <div className="space-y-4 sm:space-y-6">
-        <h1 className="text-[40px] font-bold leading-[1.05] tracking-[-1px] text-[#e6f1ff] sm:text-[50px] lg:text-[60px] lg:leading-[60px]">
+        <h1 className="text-4xl font-bold leading-[1.05] tracking-[-1px] text-[#e6f1ff] sm:text-5xl lg:text-6xl">
           <span className="block">Precision Legal</span>
           <span className="block bg-gradient-to-r from-[#3b82f6] to-[#93c5fd] bg-clip-text text-transparent">
             Intelligence.
           </span>
         </h1>
-        <p className="max-w-[512px] text-base leading-[1.7] text-[#ccd6f6] sm:text-lg sm:leading-[1.8] lg:text-xl lg:leading-[32.5px]">
+        <p className="max-w-[512px] text-base leading-[1.7] text-[#ccd6f6] sm:text-lg sm:leading-[1.8] lg:text-xl">
           Engineered for the rigorous demands of modern practice. Ask Fides transforms
           disparate legal data into verifiable, high-fidelity insights.
         </p>
@@ -49,7 +49,7 @@ export function HeroCopy() {
         </Button>
       </div>
 
-      <div className="flex flex-wrap items-center gap-4 pt-3 sm:gap-6 sm:pt-4">
+      <div className="flex w-full flex-wrap items-center gap-4 pt-3 sm:gap-6 sm:pt-4">
         {trustItems.map((item) => (
           <TrustBadge key={item.label} iconSrc={askFidesAssets[item.icon]} label={item.label} />
         ))}

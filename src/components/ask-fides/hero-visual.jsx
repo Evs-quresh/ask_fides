@@ -2,13 +2,13 @@ import { askFidesAssets } from '@/components/ask-fides/constants'
 
 function BrowserChrome() {
   return (
-    <div className="flex h-10 items-center justify-between border-b border-[rgba(30,58,138,0.3)] bg-[#0f1d36] px-4">
+    <div className="flex h-10 items-center justify-between gap-2 border-b border-[rgba(30,58,138,0.3)] bg-[#0f1d36] px-3 sm:px-4">
       <div className="flex items-center gap-2">
         <span className="h-3 w-3 rounded-full bg-[rgba(239,68,68,0.8)]" />
         <span className="h-3 w-3 rounded-full bg-[rgba(234,179,8,0.8)]" />
         <span className="h-3 w-3 rounded-full bg-[rgba(34,197,94,0.8)]" />
       </div>
-      <div className="flex h-5 w-64 items-center justify-center rounded bg-[rgba(30,58,138,0.2)]">
+      <div className="flex h-5 w-full max-w-64 items-center justify-center rounded bg-[rgba(30,58,138,0.2)]">
         <span className="font-mono text-[10px] leading-[15px] text-[#60a5fa]">
           askfides.ai/dashboard
         </span>
@@ -59,7 +59,7 @@ function AiStatusCard() {
 
 export function HeroVisual() {
   return (
-    <div className="relative w-full max-w-[462.59px] shrink-0 self-center lg:ml-12">
+    <div className="relative w-full max-w-[462px] shrink-0 self-center">
       <div className="overflow-hidden rounded-md border border-[#233554] bg-[#020c1b] p-px shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)]">
         <BrowserChrome />
         <img
