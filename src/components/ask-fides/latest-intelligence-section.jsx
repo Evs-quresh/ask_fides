@@ -1,4 +1,5 @@
 import { ArrowRight, ExternalLink } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 import { latestIntelligenceArticles } from '@/components/ask-fides/constants'
 
@@ -64,13 +65,13 @@ export function LatestIntelligenceSection() {
             </p>
           </div>
 
-          <a
-            href="#"
+          <Link
+            to="/news"
             className="inline-flex items-center gap-2 text-[18px] text-[#3894ff] transition-colors hover:text-[#66adff]"
           >
             <span>View all articles</span>
             <ArrowRight size={16} />
-          </a>
+          </Link>
         </div>
 
         <div className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">

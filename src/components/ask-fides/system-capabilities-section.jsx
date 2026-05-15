@@ -6,6 +6,7 @@ import {
   Lightbulb,
   Search,
 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 import { capabilityCards } from '@/components/ask-fides/constants'
 
@@ -71,13 +72,13 @@ export function SystemCapabilitiesSection() {
               oversight.
             </p>
           </div>
-          <a
-            href="#"
+          <Link
+            to="/docs"
             className="inline-flex items-center gap-2 pb-[2px] text-[18px] font-medium text-[#3090ff] transition-colors hover:text-[#66adff]"
           >
             <span>View Full Specifications</span>
             <ArrowRight size={16} />
-          </a>
+          </Link>
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">

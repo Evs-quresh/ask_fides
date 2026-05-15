@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Stitch CLI exports (HTML/screenshots; may contain signed URLs in manifest)
+stitch-export/

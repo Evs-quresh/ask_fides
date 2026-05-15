@@ -21,12 +21,12 @@ export const trustItems = [
   { icon: 'lock', label: 'E2E Encrypted' },
 ]
 
-export const navItems = [
-  'For Practitioners',
-  'For Academia',
-  'Company',
-  'Product Overview',
-  'News & Insights',
+export const navLinks = [
+  { label: 'For Practitioners', to: '/for-practitioners' },
+  { label: 'For Academia', to: '/for-academia' },
+  { label: 'Company', to: '/company' },
+  { label: 'Product Overview', to: '/product' },
+  { label: 'News & Insights', to: '/news' },
 ]
 
 export const workflowSteps = [

@@ -1,9 +1,27 @@
 import { Link2, Mail, Rss } from 'lucide-react'
+import { Link } from 'react-router-dom'
+
 import { AskFidesLogo } from '@/components/shared/ask-fides-logo'
 
-const resources = ['Security & Trust', 'API Documentation', 'System Status', 'Privacy Policy']
-const solutions = ['For Practitioners', 'Enterprise', 'Case Intelligence']
-const company = ['About', 'Careers', 'Contact']
+const resources = [
+  { label: 'Security & Trust', to: '/security' },
+  { label: 'API Documentation', to: '/docs' },
+  { label: 'System Status', to: '/status' },
+  { label: 'Privacy Policy', to: '/privacy' },
+  { label: 'Cookie Policy', to: '/cookies' },
+]
+
+const solutions = [
+  { label: 'For Practitioners', to: '/for-practitioners' },
+  { label: 'Enterprise', to: '/enterprise' },
+  { label: 'Case Intelligence', to: '/case-intelligence' },
+]
+
+const company = [
+  { label: 'About', to: '/about' },
+  { label: 'Careers', to: '/careers' },
+  { label: 'Contact', to: '/contact' },
+]
 
 function FooterColumn({ title, items }) {
   return (
@@ -13,10 +31,13 @@ function FooterColumn({ title, items }) {
       </h4>
       <ul className="mt-3.5 space-y-2.5">
         {items.map((item) => (
-          <li key={item}>
-            <a href="#" className="text-[16px] text-[#b5c4df] transition-colors hover:text-white sm:text-[18px]">
-              <span className="align-middle text-[16px] sm:text-[18px]">{item}</span>
-            </a>
+          <li key={item.to}>
+            <Link
+              to={item.to}
+              className="text-[16px] text-[#b5c4df] transition-colors hover:text-white sm:text-[18px]"
+            >
+              <span className="align-middle text-[16px] sm:text-[18px]">{item.label}</span>
+            </Link>
           </li>
         ))}
       </ul>
@@ -30,7 +51,12 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1280px]">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <AskFidesLogo className="h-8 w-auto sm:h-10" />
+            <Link
+              to="/"
+              className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3b82f6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#071a34]"
+            >
+              <AskFidesLogo className="h-8 w-auto sm:h-10" />
+            </Link>
             <p className="mt-4 max-w-[330px] text-[15px] leading-[1.6] text-[#b5c4df] sm:text-[17px] sm:leading-[1.55]">
               The premier legal intelligence platform for the modern practitioner. Precision engineered for results.
             </p>
@@ -58,7 +84,7 @@ export function SiteFooter() {
             <p className="max-w-[650px] text-[13px] leading-[1.5] text-[#7389b1]">
               ASK FIDES does not provide legal advice. All outputs are informational, grounded in verified sources and designed to support professional judgment.
             </p>
-            <p className="text-[13px] text-[#7389b1]">© 2025 ASK FIDES. All rights reserved.</p>
+            <p className="text-[13px] text-[#7389b1]">© 2026 ASK FIDES. All rights reserved.</p>
           </div>
         </div>
       </div>

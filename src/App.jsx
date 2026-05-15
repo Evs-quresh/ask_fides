@@ -1,28 +1,35 @@
-import { ArchitectureSection } from '@/components/ask-fides/architecture-section'
-import { HeroSection } from '@/components/ask-fides/hero-section'
-import { HowItWorksSection } from '@/components/ask-fides/how-it-works-section'
-import { LatestIntelligenceSection } from '@/components/ask-fides/latest-intelligence-section'
-import { MobileCommandSection } from '@/components/ask-fides/mobile-command-section'
-import { Navbar } from '@/components/ask-fides/navbar'
-import { ReclaimSection } from '@/components/ask-fides/reclaim-section'
-import { SystemCapabilitiesSection } from '@/components/ask-fides/system-capabilities-section'
-import { DualCtaSection } from '@/components/shared/dual-cta-section'
-import { SiteFooter } from '@/components/shared/site-footer'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+
+import { SiteLayout } from '@/layouts/SiteLayout'
+import { CookiePolicyPage } from '@/pages/CookiePolicyPage'
+import { ForPractitionersPage } from '@/pages/ForPractitionersPage'
+import { HomePage } from '@/pages/HomePage'
+import { MarketingPage } from '@/pages/MarketingPage'
+import { NotFoundPage } from '@/pages/NotFoundPage'
+import { PrivacyPolicyPage } from '@/pages/PrivacyPolicyPage'
+import { ProductOverviewPage } from '@/pages/ProductOverviewPage'
+import { SecurityTrustFigmaPage } from '@/pages/SecurityTrustFigmaPage'
+import { marketingRoutes } from '@/routes/marketing-routes'
 
 function App() {
   return (
-    <main className="min-h-screen bg-[#0a192f] font-sans antialiased">
-      <Navbar />
-      <HeroSection />
-      <HowItWorksSection />
-      <SystemCapabilitiesSection />
-      <ArchitectureSection />
-      <MobileCommandSection />
-      <ReclaimSection />
-      <LatestIntelligenceSection />
-      <DualCtaSection />
-      <SiteFooter />
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<SiteLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="security" element={<SecurityTrustFigmaPage />} />
+          <Route path="security-trust" element={<Navigate to="/security" replace />} />
+          <Route path="privacy" element={<PrivacyPolicyPage />} />
+          <Route path="cookies" element={<CookiePolicyPage />} />
+          <Route path="for-practitioners" element={<ForPractitionersPage />} />
+          <Route path="product" element={<ProductOverviewPage />} />
+          {marketingRoutes.map(({ path, pageId }) => (
+            <Route key={path} path={path} element={<MarketingPage pageId={pageId} />} />
+          ))}
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

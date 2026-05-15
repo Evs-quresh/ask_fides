@@ -1,4 +1,5 @@
 import { ArrowRight, Bell, Database, Search, Wifi } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 import { mobileAlerts, mobileFeatureBullets } from '@/components/ask-fides/constants'
 
@@ -89,13 +90,13 @@ export function MobileCommandSection() {
               ))}
             </div>
 
-            <a
-              href="#"
+            <Link
+              to="/product"
               className="mt-8 inline-flex items-center gap-2 text-[14px] font-semibold tracking-[0.15px] text-[#3495ff] transition-colors hover:text-[#66adff]"
             >
               <span>EXPLORE MOBILE FEATURES</span>
               <ArrowRight size={16} />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
